@@ -16,13 +16,13 @@ export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header>
+    <header className="border-b border-b-gray-300  shadow-sm">
       <div>
-        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8 max-w-screen-xl mx-auto">
+        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8 max-w-screen-xl mx-auto ">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5 text-xl text-emerald-600 font-bold">
+            <NavLink to="/" className="-m-1.5 p-1.5 text-xl text-emerald-600 font-bold">
               Diapredict
-            </a>
+            </NavLink>
           </div>
           <div className="flex lg:hidden">
             <button type="button" onClick={() => setMobileMenuOpen(true)} className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">

@@ -34,11 +34,7 @@ def predict():
 
         # Prediksi dengan model
         prediction = classifier.predict(features)
-        # Interpretasi hasil prediksi
-        if prediction[0] == 0:
-            result = "Negatif diabetes"
-        else:
-            result = "Diprediksi positif diabetes"
+        result = bool(prediction[0])
 
         return jsonify({
             "message": "Prediction success",
@@ -50,6 +46,7 @@ def predict():
         return jsonify({"error": str(ve), "message": "Invalid input type. Ensure all fields are correct."}), 400
     except Exception as e:
         return jsonify({"error": str(e), "message": "Prediction error."}), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True)
